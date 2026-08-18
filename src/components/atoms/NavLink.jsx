@@ -1,4 +1,4 @@
-function NavLink({ href, label, isActive, onClick }) {
+const NavLink = ({ href, label, isActive, onClick }) => {
   return (
     <a 
       className={`nav-link${isActive ? ' nav-link--active' : ''}`} 

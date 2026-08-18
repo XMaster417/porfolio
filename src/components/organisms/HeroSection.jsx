@@ -1,7 +1,7 @@
 import myPhoto from '../../assets/images/my_photo.png'
 import SocialLinks from '../molecules/SocialLinks'
 
-function HeroSection() {
+const HeroSection = () => {
   return (
     <main id="home" className="hero-section">
       <div className="hero-section__glow" aria-hidden="true" />
