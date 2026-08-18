@@ -23,11 +23,6 @@ const AboutMeSection = () => {
 
           <InterestCards />
 
-          <blockquote className="about-section__quote">
-            <span aria-hidden="true">“</span>
-            <p>Friendly, funny, definitely a great person...<br />and not just because I say it myself”</p>
-          </blockquote>
-
           <SocialLinks className="about-social" />
         </article>
 
