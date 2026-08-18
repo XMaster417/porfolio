@@ -10,7 +10,7 @@ const navigationItems = [
   { href: '#contact', label: 'Contact' },
 ]
 
-function Navbar() {
+const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   const closeMenu = () => setIsMenuOpen(false)
