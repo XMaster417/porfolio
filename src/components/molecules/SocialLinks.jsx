@@ -7,9 +7,9 @@ const socialLinks = [
   { href: 'https://www.linkedin.com/in/yael-charles', icon: linkedinIcon, label: 'LinkedIn' },
 ]
 
-function SocialLinks() {
+const SocialLinks = ({ className = '' }) => {
   return (
-    <div className="social-links" aria-label="Redes profesionales">
+    <div className={`social-links ${className}`.trim()} aria-label="Redes profesionales">
       {socialLinks.map((socialLink) => <SocialLink key={socialLink.label} {...socialLink} />)}
     </div>
   )
