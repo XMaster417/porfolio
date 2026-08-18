@@ -23,7 +23,7 @@ const AboutMeSection = () => {
 
           <InterestCards />
 
-          <SocialLinks className="about-social" />
+          <SocialLinks />
         </article>
 
         <div className="about-section__visual">
