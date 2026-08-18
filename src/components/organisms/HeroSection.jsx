@@ -3,7 +3,7 @@ import SocialLinks from '../molecules/SocialLinks'
 
 function HeroSection() {
   return (
-    <main className="hero-section">
+    <main id="home" className="hero-section">
       <div className="hero-section__glow" aria-hidden="true" />
       <section className="hero-section__content" aria-labelledby="hero-title">
         <div className="hero-section__portrait" aria-hidden="true">
