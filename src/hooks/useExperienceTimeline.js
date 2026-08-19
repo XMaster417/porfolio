@@ -1,4 +1,6 @@
 import { useState } from 'react'
+import formatPeriod from '../utils/formatPeriod'
+import isCurrentlyEnrolled from '../utils/isCurrentlyEnrolled'
 
 const experiences = [
   {
@@ -28,29 +30,6 @@ const experiences = [
     technologies: ['Cisco Packet Tracer', 'Network Design', 'Hardware Installation'],
   },
 ]
-
-const formatDate = (date) => new Intl.DateTimeFormat('en', {
-  month: 'short',
-  year: 'numeric',
-  timeZone: 'UTC',
-}).format(date instanceof Date ? date : new Date(`${date}T00:00:00Z`))
-
-const formatPeriod = ({ startDate, endDate }) => {
-  if (!startDate && !endDate) return null
-  if (!startDate) return formatDate(endDate)
-
-  return `${formatDate(startDate)} – ${formatDate(endDate ?? new Date())}`
-}
-
-const isCurrentlyEnrolled = ({ startDate, endDate }) => {
-  if (!startDate) return false
-  if (!endDate) return true
-
-  const today = new Date()
-  today.setHours(0, 0, 0, 0)
-
-  return new Date(`${endDate}T00:00:00`).getTime() >= today.getTime()
-}
 
 const useExperienceTimeline = () => {
   const [expandedExperienceIds, setExpandedExperienceIds] = useState([])
