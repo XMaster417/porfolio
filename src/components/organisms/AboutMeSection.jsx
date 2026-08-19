@@ -1,5 +1,6 @@
 import academicIcon from '../../assets/icons/academic_icon.svg'
 import InfoBadge from '../atoms/InfoBadge'
+import SectionLabel from '../atoms/SectionLabel'
 import AboutPortrait from '../molecules/AboutPortrait'
 import InterestCards from '../molecules/InterestCards'
 import SocialLinks from '../molecules/SocialLinks'
@@ -9,7 +10,7 @@ const AboutMeSection = () => {
     <section id="about-me" className="about-section" aria-labelledby="about-title">
       <div className="about-section__layout">
         <article className="about-section__card">
-          <p className="about-section__eyebrow"><span />ABOUT ME</p>
+          <SectionLabel label="ABOUT ME" />
           <h2 id="about-title">It's me,<br />Yael Charles</h2>
 
           <div className="about-section__study-row">
