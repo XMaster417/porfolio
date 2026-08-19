@@ -1,5 +1,8 @@
 import academicIcon from '../../assets/icons/academic_icon.svg'
 import workIcon from '../../assets/icons/work_icon.svg'
+import dateIcon from '../../assets/icons/date_icon.svg'
+import currentlyEnrolledIcon from '../../assets/icons/currently_enrolled_icon.svg'
+import locationIcon from '../../assets/icons/location_icon.svg'
 import ExperienceToggle from '../atoms/ExperienceToggle'
 import ExperienceDetails from './ExperienceDetails'
 
@@ -27,9 +30,20 @@ const ExperienceCard = ({ experience, isExpanded, onToggle }) => {
         </div>
 
         <div className="experience-card__meta">
-          <p>{experience.period}</p>
-          {experience.isCurrent && <span>Currently enrolled</span>}
-          <p className="experience-card__location">{experience.location}</p>
+          <p className="experience-card__meta-item">
+            <img src={dateIcon} alt="" aria-hidden="true" />
+            {experience.period}
+          </p>
+          {experience.isCurrent && (
+            <span className="experience-card__meta-item">
+              <img src={currentlyEnrolledIcon} alt="" aria-hidden="true" />
+              Currently enrolled
+            </span>
+          )}
+          <p className="experience-card__meta-item experience-card__location">
+            <img src={locationIcon} alt="" aria-hidden="true" />
+            {experience.location}
+          </p>
         </div>
 
         <ExperienceToggle isExpanded={isExpanded} title={experience.title} onClick={onToggle} />
