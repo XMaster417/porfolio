@@ -7,7 +7,6 @@ const ProjectsSection = () => {
   const {
     projects,
     activeProjectIndex,
-    setActiveProjectIndex,
     showPreviousProject,
     showNextProject,
   } = useProjectCarousel()
@@ -51,7 +50,7 @@ const ProjectsSection = () => {
               return (
                 <div
                   className={`projects-carousel__slide projects-carousel__slide--${position}`}
-                  key={project.id}
+                  key={`${project.id}-${index}`}
                   aria-hidden={index !== activeProjectIndex}
                 >
                   <ProjectCard project={project} isActive={index === activeProjectIndex} />
@@ -70,17 +69,28 @@ const ProjectsSection = () => {
           </button>
         </div>
 
-        <div className="projects-carousel__pagination" aria-label="Choose a project">
-          {projects.map((project, index) => (
-            <button
-              className={index === activeProjectIndex ? 'projects-carousel__dot projects-carousel__dot--active' : 'projects-carousel__dot'}
-              type="button"
-              key={project.id}
-              aria-label={`Show ${project.title}`}
-              aria-current={index === activeProjectIndex ? 'true' : undefined}
-              onClick={() => setActiveProjectIndex(index)}
-            />
-          ))}
+        <div
+          className="projects-carousel__progress"
+          role="group"
+          aria-label="Project carousel position"
+        >
+          {projects.map((project, index) => {
+            const state = index === activeProjectIndex
+              ? 'active'
+              : index === activeProjectIndex - 1
+                ? 'previous'
+                : index === activeProjectIndex + 1
+                  ? 'next'
+                  : 'inactive'
+
+            return (
+              <span
+                className={`projects-carousel__progress-segment projects-carousel__progress-segment--${state}`}
+                key={`${project.id}-${index}`}
+                aria-hidden="true"
+              />
+            )
+          })}
         </div>
       </div>
     </section>

@@ -47,7 +47,6 @@ const useProjectCarousel = () => {
   return {
     projects,
     activeProjectIndex,
-    setActiveProjectIndex,
     showPreviousProject,
     showNextProject,
   }
