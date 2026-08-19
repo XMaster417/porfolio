@@ -30,10 +30,12 @@ const ExperienceCard = ({ experience, isExpanded, onToggle }) => {
         </div>
 
         <div className="experience-card__meta">
-          <p className="experience-card__meta-item">
-            <img src={dateIcon} alt="" aria-hidden="true" />
-            {experience.period}
-          </p>
+          {experience.period && (
+            <p className="experience-card__meta-item">
+              <img src={dateIcon} alt="" aria-hidden="true" />
+              {experience.period}
+            </p>
+          )}
           {experience.isCurrent && (
             <span className="experience-card__meta-item">
               <img src={currentlyEnrolledIcon} alt="" aria-hidden="true" />
