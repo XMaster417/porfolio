@@ -29,6 +29,7 @@ const ExperienceCard = ({ experience, isExpanded, onToggle }) => {
         <div className="experience-card__meta">
           <p>{experience.period}</p>
           {experience.isCurrent && <span>Currently enrolled</span>}
+          {isExpanded && <p className="experience-card__location">{experience.location}</p>}
         </div>
 
         <ExperienceToggle isExpanded={isExpanded} title={experience.title} onClick={onToggle} />

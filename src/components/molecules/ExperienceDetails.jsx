@@ -1,8 +1,6 @@
-const ExperienceDetails = ({ location, details, technologies = [] }) => {
+const ExperienceDetails = ({ details, technologies = [] }) => {
   return (
     <div className="experience-details">
-      <p className="experience-details__location">{location}</p>
-
       {technologies.length > 0 && (
         <div className="experience-details__technologies" aria-label="Tecnologías y habilidades">
           {technologies.map((technology) => <span key={technology}>{technology}</span>)}
