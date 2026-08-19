@@ -1,4 +1,5 @@
 import AboutMeSection from '../../components/organisms/AboutMeSection'
+import ExperienceSection from '../../components/organisms/ExperienceSection'
 import HeroSection from '../../components/organisms/HeroSection'
 import Navbar from '../../components/organisms/Navbar'
 
@@ -8,6 +9,7 @@ const Home = () => {
       <Navbar />
       <HeroSection />
       <AboutMeSection />
+      <ExperienceSection />
     </>
   )
 }
