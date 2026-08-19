@@ -38,7 +38,7 @@ const formatDate = (date) => new Intl.DateTimeFormat('en', {
 const formatPeriod = ({ startDate, endDate }) => `${formatDate(startDate)} – ${formatDate(endDate ?? new Date())}`
 
 const useExperienceTimeline = () => {
-  const [expandedExperienceIds, setExpandedExperienceIds] = useState(['arcadian-support'])
+  const [expandedExperienceIds, setExpandedExperienceIds] = useState([])
 
   const timelineExperiences = useMemo(() => experiences.map((experience) => ({
     ...experience,
