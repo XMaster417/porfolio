@@ -1,4 +1,3 @@
-import arrowIcon from '../../assets/icons/arrow_down_icon.svg'
 import useSkillsTabs from '../../hooks/useSkillsTabs'
 import SectionLabel from '../atoms/SectionLabel'
 import SkillTab from '../atoms/SkillTab'
@@ -11,8 +10,8 @@ const SkillsSection = () => {
     activeTabIndex,
     activeSkills,
     selectTab,
-    showPreviousTab,
-    showNextTab,
+    startTabSwipe,
+    endTabSwipe,
   } = useSkillsTabs()
 
   const getTabPosition = (tabIndex) => {
@@ -60,16 +59,12 @@ const SkillsSection = () => {
         <SectionLabel id="skills-title" label="SKILLS" centered showEndDot />
 
         <div className="skills-tabs-carousel">
-          <button
-            className="skills-tabs-carousel__button skills-tabs-carousel__button--previous"
-            type="button"
-            aria-label="Show previous skill tab"
-            onClick={showPreviousTab}
+          <div
+            className="skills-tabs-carousel__viewport"
+            onTouchStart={startTabSwipe}
+            onTouchEnd={endTabSwipe}
+            onTouchCancel={endTabSwipe}
           >
-            <img src={arrowIcon} alt="" aria-hidden="true" />
-          </button>
-
-          <div className="skills-tabs-carousel__viewport">
             <div className="skills-tabs" role="tablist" aria-label="Skill tabs">
               {skillTabs.map((tab, index) => (
                 <SkillTab
@@ -83,15 +78,6 @@ const SkillsSection = () => {
               ))}
             </div>
           </div>
-
-          <button
-            className="skills-tabs-carousel__button skills-tabs-carousel__button--next"
-            type="button"
-            aria-label="Show next skill tab"
-            onClick={showNextTab}
-          >
-            <img src={arrowIcon} alt="" aria-hidden="true" />
-          </button>
         </div>
 
         <div className="skills-tabs-carousel__progress" aria-hidden="true">

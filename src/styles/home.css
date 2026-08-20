@@ -241,13 +241,9 @@
   background: linear-gradient(135deg, #3675fa, #2358d6);
   box-shadow: 0 0 24px rgba(45, 104, 234, .24);
 }
-.skill-tab:focus-visible,
-.skills-tabs-carousel__button:focus-visible {
+.skill-tab:focus-visible {
   outline: 3px solid #77a0ff;
   outline-offset: 4px;
-}
-.skills-tabs-carousel__button {
-  display: none;
 }
 .skills-grid {
   display: grid;
@@ -321,15 +317,28 @@
 @media (max-width: 700px) {
   .skills-section { padding: 4.2rem 1rem; }
   .skills-section .section-label { margin-bottom: 2rem; }
-  .skills-tabs-carousel {
-    display: grid;
-    grid-template-columns: 2.35rem minmax(0, 1fr) 2.35rem;
-    align-items: center;
-    gap: .5rem;
-  }
   .skills-tabs-carousel__viewport {
     height: 4.2rem;
     overflow: hidden;
+    touch-action: pan-y;
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent,
+      rgba(0, 0, 0, .7) 7%,
+      #000 18%,
+      #000 82%,
+      rgba(0, 0, 0, .7) 93%,
+      transparent
+    );
+    mask-image: linear-gradient(
+      to right,
+      transparent,
+      rgba(0, 0, 0, .7) 7%,
+      #000 18%,
+      #000 82%,
+      rgba(0, 0, 0, .7) 93%,
+      transparent
+    );
   }
   .skills-tabs {
     position: relative;
@@ -340,9 +349,14 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 70%;
+    width: 55%;
     min-height: 3.45rem;
-    padding: .7rem 1rem;
+    padding: .55rem .7rem;
+    gap: .5rem;
+    font-size: clamp(.7rem, 3vw, .9rem);
+    line-height: 1.1;
+    white-space: normal;
+    text-align: center;
     opacity: 0;
     pointer-events: none;
     transform: translate(-50%, -50%) scale(.8);
@@ -355,34 +369,19 @@
     transform: translate(-50%, -50%) scale(1);
   }
   .skill-tab--previous {
-    left: -14%;
-    opacity: .7;
+    left: 10%;
+    opacity: .55;
     pointer-events: auto;
-    transform: translate(-50%, -50%) scale(.92);
+    transform: translate(-50%, -50%) scale(.84);
   }
   .skill-tab--next {
-    left: 114%;
-    opacity: .7;
+    left: 90%;
+    opacity: .55;
     pointer-events: auto;
-    transform: translate(-50%, -50%) scale(.92);
+    transform: translate(-50%, -50%) scale(.84);
   }
   .skill-tab--hidden { visibility: hidden; }
   .skill-tab img { width: 1.45rem; height: 1.45rem; }
-  .skills-tabs-carousel__button {
-    display: grid;
-    z-index: 3;
-    place-items: center;
-    width: 2.35rem;
-    aspect-ratio: 1;
-    padding: .72rem;
-    border: 1px solid rgba(65, 124, 255, .66);
-    border-radius: 50%;
-    background: rgba(11, 21, 40, .88);
-    cursor: pointer;
-  }
-  .skills-tabs-carousel__button img { width: 100%; filter: invert(1) brightness(2); }
-  .skills-tabs-carousel__button--previous img { transform: rotate(90deg); }
-  .skills-tabs-carousel__button--next img { transform: rotate(-90deg); }
   .skills-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: clamp(.55rem, 2.5vw, .85rem);
@@ -406,7 +405,7 @@
   .skill-card__experience-suffix { display: none; }
   .skills-tabs-carousel__progress {
     display: flex;
-    width: calc(100% - 6rem);
+    width: min(100%, 22rem);
     height: .25rem;
     margin: 2rem auto 0;
     overflow: hidden;
@@ -425,7 +424,7 @@
 }
 @media (max-width: 380px) {
   .skills-section { padding-inline: .75rem; }
-  .skill-tab { width: 94%; font-size: .82rem; }
+  .skill-tab { font-size: .7rem; }
 }
 @media (prefers-reduced-motion: reduce) {
   .skill-tab,
