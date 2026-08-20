@@ -1,11 +1,17 @@
 import dateIcon from '../../assets/icons/date_icon.svg'
 import githubIcon from '../../assets/icons/github_icon.svg'
 import projectIcon from '../../assets/icons/project_icon.svg'
+import useProjectCardOverflow from '../../hooks/useProjectCardOverflow'
 import TechnologyList from '../atoms/TechnologyList'
 
 const ProjectCard = ({ project, isActive }) => {
+  const { cardRef, isScrollable } = useProjectCardOverflow(project)
+
   return (
-    <article className="project-card">
+    <article
+      ref={cardRef}
+      className={`project-card${isScrollable ? ' project-card--scrollable' : ''}`}
+    >
       <header className="project-card__header">
         <div className="project-card__icon" aria-hidden="true">
           <img src={projectIcon} alt="" />
