@@ -3,6 +3,7 @@ import ExperienceSection from '../../components/organisms/ExperienceSection'
 import HeroSection from '../../components/organisms/HeroSection'
 import Navbar from '../../components/organisms/Navbar'
 import ProjectsSection from '../../components/organisms/ProjectsSection'
+import SkillsSection from '../../components/organisms/SkillsSection'
 
 const Home = () => {
   return (
@@ -12,6 +13,7 @@ const Home = () => {
       <AboutMeSection />
       <ExperienceSection />
       <ProjectsSection />
+      <SkillsSection />
     </>
   )
 }
