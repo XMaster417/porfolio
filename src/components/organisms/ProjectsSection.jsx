@@ -14,6 +14,7 @@ const ProjectsSection = () => {
     startProjectTouchSwipe,
     endProjectTouchSwipe,
     cancelProjectSwipe,
+    cancelProjectTouchSwipe,
     preventSwipeClick,
   } = useProjectCarousel()
 
@@ -55,9 +56,9 @@ const ProjectsSection = () => {
             onPointerDown={startProjectSwipe}
             onPointerUp={endProjectSwipe}
             onPointerCancel={cancelProjectSwipe}
-            onTouchStart={startProjectTouchSwipe}
-            onTouchEnd={endProjectTouchSwipe}
-            onTouchCancel={cancelProjectSwipe}
+            onTouchStartCapture={startProjectTouchSwipe}
+            onTouchEndCapture={endProjectTouchSwipe}
+            onTouchCancel={cancelProjectTouchSwipe}
             onClickCapture={preventSwipeClick}
           >
             {projects.map((project, index) => {

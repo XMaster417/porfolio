@@ -86,6 +86,10 @@ const useProjectCarousel = () => {
 
   const cancelProjectSwipe = () => {
     swipeStart.current = null
+    didSwipe.current = false
+  }
+
+  const cancelProjectTouchSwipe = () => {
     touchStart.current = null
     didSwipe.current = false
   }
@@ -108,6 +112,7 @@ const useProjectCarousel = () => {
     startProjectTouchSwipe,
     endProjectTouchSwipe,
     cancelProjectSwipe,
+    cancelProjectTouchSwipe,
     preventSwipeClick,
   }
 }
