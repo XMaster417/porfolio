@@ -323,9 +323,9 @@
   .skills-section .section-label { margin-bottom: 2rem; }
   .skills-tabs-carousel {
     display: grid;
-    grid-template-columns: 2.8rem minmax(0, 1fr) 2.8rem;
+    grid-template-columns: 2.35rem minmax(0, 1fr) 2.35rem;
     align-items: center;
-    gap: .35rem;
+    gap: .5rem;
   }
   .skills-tabs-carousel__viewport {
     height: 4.2rem;
@@ -340,7 +340,7 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 72%;
+    width: 70%;
     min-height: 3.45rem;
     padding: .7rem 1rem;
     opacity: 0;
@@ -355,16 +355,16 @@
     transform: translate(-50%, -50%) scale(1);
   }
   .skill-tab--previous {
-    left: -20%;
-    opacity: .34;
+    left: -14%;
+    opacity: .7;
     pointer-events: auto;
-    transform: translate(-50%, -50%) scale(.84);
+    transform: translate(-50%, -50%) scale(.92);
   }
   .skill-tab--next {
-    left: 120%;
-    opacity: .34;
+    left: 114%;
+    opacity: .7;
     pointer-events: auto;
-    transform: translate(-50%, -50%) scale(.84);
+    transform: translate(-50%, -50%) scale(.92);
   }
   .skill-tab--hidden { visibility: hidden; }
   .skill-tab img { width: 1.45rem; height: 1.45rem; }
@@ -372,7 +372,7 @@
     display: grid;
     z-index: 3;
     place-items: center;
-    width: 2.8rem;
+    width: 2.35rem;
     aspect-ratio: 1;
     padding: .72rem;
     border: 1px solid rgba(65, 124, 255, .66);
