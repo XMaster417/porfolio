@@ -113,7 +113,7 @@
 .projects-section__content { position: relative; z-index: 1; width: min(1380px, 100%); margin: 0 auto; }
 .projects-section .section-label { margin-bottom: clamp(2.5rem, 5vw, 4.5rem); }
 .projects-carousel { position: relative; padding-inline: clamp(3.6rem, 6vw, 5rem); }
-.projects-carousel__viewport { position: relative; height: 39rem; }
+.projects-carousel__viewport { position: relative; height: 39rem; touch-action: pan-y; user-select: none; }
 .projects-carousel__slide { position: absolute; top: 50%; left: 50%; width: min(58%, 760px); padding: 1px; opacity: 0; pointer-events: none; backface-visibility: hidden; transform: translate(-50%, -50%) scale(.6); transition: left 620ms cubic-bezier(.16, 1, .3, 1), opacity 480ms cubic-bezier(.16, 1, .3, 1), transform 620ms cubic-bezier(.16, 1, .3, 1), filter 480ms ease; will-change: left, opacity, transform, filter; }
 .projects-carousel__slide--active { z-index: 3; opacity: 1; pointer-events: auto; transform: translate(-50%, -50%) scale(1); }
 .projects-carousel__slide--previous { z-index: 2; left: 17%; opacity: .45; transform: translate(-50%, -50%) scale(.68); filter: blur(2px) saturate(.62); }

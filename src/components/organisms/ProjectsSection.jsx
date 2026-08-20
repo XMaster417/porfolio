@@ -9,6 +9,12 @@ const ProjectsSection = () => {
     activeProjectIndex,
     showPreviousProject,
     showNextProject,
+    startProjectSwipe,
+    endProjectSwipe,
+    startProjectTouchSwipe,
+    endProjectTouchSwipe,
+    cancelProjectSwipe,
+    preventSwipeClick,
   } = useProjectCarousel()
 
   const getProjectPosition = (projectIndex) => {
@@ -43,7 +49,17 @@ const ProjectsSection = () => {
             <img src={arrowIcon} alt="" aria-hidden="true" />
           </button>
 
-          <div className="projects-carousel__viewport" aria-live="polite">
+          <div
+            className="projects-carousel__viewport"
+            aria-live="polite"
+            onPointerDown={startProjectSwipe}
+            onPointerUp={endProjectSwipe}
+            onPointerCancel={cancelProjectSwipe}
+            onTouchStart={startProjectTouchSwipe}
+            onTouchEnd={endProjectTouchSwipe}
+            onTouchCancel={cancelProjectSwipe}
+            onClickCapture={preventSwipeClick}
+          >
             {projects.map((project, index) => {
               const position = getProjectPosition(index)
 
