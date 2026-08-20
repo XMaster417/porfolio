@@ -3,6 +3,7 @@ import workIcon from '../../assets/icons/work_icon.svg'
 import dateIcon from '../../assets/icons/date_icon.svg'
 import currentlyEnrolledIcon from '../../assets/icons/currently_enrolled_icon.svg'
 import locationIcon from '../../assets/icons/location_icon.svg'
+import TechnologyList from '../atoms/TechnologyList'
 import ExperienceToggle from '../atoms/ExperienceToggle'
 import ExperienceDetails from './ExperienceDetails'
 
@@ -53,7 +54,7 @@ const ExperienceCard = ({ experience, isExpanded, onToggle }) => {
 
       {experience.technologies?.length > 0 && (
         <div className="experience-card__technologies" aria-label="Tecnologías y habilidades">
-          {experience.technologies.map((technology) => <span key={technology}>{technology}</span>)}
+          <TechnologyList technologies={experience.technologies} />
         </div>
       )}
 
