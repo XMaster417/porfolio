@@ -1,0 +1,107 @@
+const projects = [
+  {
+    id: 'cmmi-dev',
+    title: 'CMMI-DEV Process Improvement Project',
+    startDate: 'Feb 2026',
+    endDate: 'Jun 2026',
+    technologies: ['CMMI-DEV. 1.3', 'PP', 'MA'],
+    details: [
+      'Aligned project practices with CMMI-DEV 1.3 Level 2 and selected Level 3 process areas, including TS, RD, VER, VAL, OPD and OPF.',
+      'Defined project metrics to support decision-making throughout the software development lifecycle.',
+      'Improved processes performance by identifying root causes of project deviations and taking corrective actions based on quantitative evidence.',
+    ],
+  },
+  {
+    id: 'tochan-rchq',
+    title: 'Tochan - RCHQ',
+    startDate: 'Sep 2026',
+    endDate: 'Oct 2026',
+    technologies: ['React', 'Node.js', 'Jest', 'Prisma', 'PostgreSQL'],
+    details: [
+      'Developed a system for a network of foster homes to centralize staff information.',
+      'Implemented absence and events modules.',
+      'Reduced the time spent consulting information from days to less than 4 minutes.',
+    ],
+    githubUrl: 'https://github.com/AztlanConsulting/RCHQ-Back',
+  },
+  {
+    id: 'workcells',
+    title: 'WorkCells',
+    startDate: 'Feb 2026',
+    endDate: 'Jun 2026',
+    technologies: ['Node.js', 'Express', 'EJS', 'SQL'],
+    details: [
+      'Developed a system to centralize employee sessions, absence requests and internal administrative workflows.',
+      'Allowed managers to approve or reject employee requests according to their permissions.',
+      'Included dashboards to support data-driven decision-making.',
+    ],
+    githubUrl: 'https://github.com/EdCanCe/WorkCells',
+  },
+  {
+    id: 'elarca',
+    title: 'El arca app',
+    startDate: 'Sep 2025',
+    endDate: 'Dec 2025',
+    technologies: ['Kotlin', 'MariaDB', 'Node.js'],
+    details: [
+      'Developed a mobile application to manage the inventory of a non-profit organization.',
+      'Applied MVVM architecture and Clean architecture principles to ensure maintainability and scalability of the codebase.',
+      'Focused on managing the inventory of supplies, adding functions to update the inventory status.',
+    ],
+    githubUrl: 'https://github.com/OlimpoHub/android',
+  },
+  {
+    id: 'boolevard_heroes',
+    title: 'Boolevard Heroes',
+    startDate: 'Ago 2025',
+    endDate: 'Sep 2025',
+    technologies: ['Unity', 'Numpy', 'Python', 'C#', 'Flask'],
+    details: [
+      'Builted a simulation of the fire rescue game "Boolevard Heroes" using Unity and Python.',
+      'Design the behavior of game characters and elements using pyhton libraries.',
+      'Built a Flask API to connect the unity game with the Python simulation.',
+      'Created a interface using Unity to visualize the simulation results and interact with the game.',
+    ],
+    githubUrl: 'https://github.com/EdCanCe/Boolevard-Heroes',
+  },
+  {
+    id: 'poke_hell',
+    title: 'Poke hell',
+    startDate: 'Ago 2025',
+    endDate: 'Sep 2025',
+    technologies: ['Unity', 'C#'],
+    details: [
+      'Builted a 2D platformer bullet hell game using Unity and C#.',
+      'Modeled the game mechanics and physics to create the attack patterns of an enemy.',
+      'Apply techniques to optimize the performance of the game and reduce the memory usage.',
+    ],
+    githubUrl: 'https://github.com/XMaster417/Poke-hell',
+  },
+  {
+    id: 'counting_primes',
+    title: 'Counting prime numbers',
+    startDate: 'May 2025',
+    endDate: 'Jun 2025',
+    technologies: ['C++', 'CUDA', 'Parallel Programming'],
+    details: [
+      'Builted a simple program to count the number of prime numbers in a given range using C++ and the Sieve of Eratosthenes.',
+      'Applied parallel programming techniques using multi-thread andCUDA to optimize the performance of the program and reduce the execution time.',
+      'Obtained a total time of 0.018ms using cuda instead of 927.75ms using a single thread, achieving a speedup of 51,541.77.',
+    ],
+    githubUrl: 'https://github.com/XMaster417/Counting_Prime_Numbers',
+  },
+  {
+    id: 'smartsnack',
+    title: 'SmartSnack',
+    startDate: 'Oct 2024',
+    endDate: 'Dec 2024',
+    technologies: ['TypeScript', 'C++', 'ESP32', 'Arduino', 'HTML', 'CSS', 'MariaDB'],
+    details: [
+      'Developed an IoT system to monitor and control a feeding system for fish tanks using a web application and an ESP32 microcontroller.',
+      'Developed the mesurement system using Arduino and C++ to control the feeding system and send data to the web application.',
+    ],
+    githubUrl: 'https://github.com/XMaster417/front-back-_end_iot_2024',
+  },
+]
+
+export default projects
