@@ -609,9 +609,10 @@ a.contact-detail:focus-visible { outline: 3px solid #77a0ff; outline-offset: 4px
   margin-top: auto;
   padding-top: 1.6rem;
   border-top: 1px solid rgba(163, 184, 234, .18);
+  text-align: center;
 }
 .contact-details__socials > p { margin: 0 0 .9rem; color: rgba(224, 231, 247, .74); font-size: .9rem; }
-.contact-details__socials .social-links { justify-content: flex-start; }
+.contact-details__socials .social-links { justify-content: center; }
 .contact-details__socials .social-link {
   display: grid;
   place-items: center;
