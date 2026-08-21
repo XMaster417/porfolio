@@ -56,7 +56,7 @@ const skills = [
   { name: 'PostgreSQL', years: 1, tab: ['web'], icon: postgreSQLIcon },
   { name: 'Kotlin', years: 1, tab: ['mobile'], icon: kotlinIcon },
   { name: 'MariaDB', years: 2, tab: ['mobile', 'web'], icon: mariaDbIcon },
-  { name: 'PostgreSQL', years: 1, tab: ['mobile', 'web'], icon: postgreSQLIcon },
+  { name: 'PostgreSQL', years: 1, tab: ['mobile'], icon: postgreSQLIcon },
   { name: 'Arduino', years: 1, tab: ['network'], icon: arduinoIcon },
   { name: 'C++', years: 3, tab: ['stack'], icon: cppIcon },
   { name: 'Python', years: 3, tab: ['stack'], icon: pythonIcon },
