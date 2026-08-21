@@ -1,4 +1,7 @@
+import FieldError from './FieldError'
+
 const ContactField = ({
+  errors,
   id,
   icon,
   label,
@@ -10,6 +13,8 @@ const ContactField = ({
   isTextArea = false,
 }) => {
   const Field = isTextArea ? 'textarea' : 'input'
+  const errorId = `${id}-error`
+  const hasErrors = errors?.length > 0
 
   return (
     <div className="contact-field">
@@ -25,9 +30,12 @@ const ContactField = ({
         minLength={minLength}
         maxLength={maxLength}
         rows={isTextArea ? 6 : undefined}
-        autoComplete={name === 'name' || name === 'email' ? name : undefined}
+        autoComplete={name === 'name' ? 'name' : name === 'contactEmail' ? 'email' : undefined}
+        aria-describedby={hasErrors ? errorId : undefined}
+        aria-invalid={hasErrors}
         required
       />
+      <FieldError id={errorId} errors={errors} />
     </div>
   )
 }

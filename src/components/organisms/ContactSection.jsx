@@ -2,6 +2,7 @@ import useContactForm from '../../hooks/useContactForm'
 import SectionLabel from '../atoms/SectionLabel'
 import ContactDetails from '../molecules/ContactDetails'
 import ContactForm from '../molecules/ContactForm'
+import Snackbar from '../molecules/Snackbar'
 
 const ContactSection = () => {
   const contactForm = useContactForm()
@@ -13,14 +14,20 @@ const ContactSection = () => {
 
         <div className="contact-section__card">
           <ContactForm
+            fieldErrors={contactForm.fieldErrors}
             isSubmitting={contactForm.isSubmitting}
             submission={contactForm.submission}
-            onChange={contactForm.clearSubmission}
+            onChange={contactForm.handleContactChange}
+            onFieldBlur={contactForm.validateContactField}
             onSubmit={contactForm.submitContactForm}
           />
           <ContactDetails />
         </div>
       </div>
+      <Snackbar
+        message={contactForm.submission.status === 'success' ? contactForm.submission.message : ''}
+        onClose={contactForm.clearSubmission}
+      />
     </section>
   )
 }

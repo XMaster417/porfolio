@@ -1,44 +1,50 @@
 import mailIcon from '../../assets/icons/mail_icon.svg'
 import messageIcon from '../../assets/icons/message_icon.svg'
+import { contactFieldConstraints } from '../../schemas/contactSchema'
 import ContactField from '../atoms/ContactField'
 
 const ContactForm = ({
+  fieldErrors,
   isSubmitting,
   submission,
   onChange,
+  onFieldBlur,
   onSubmit,
 }) => {
   return (
-    <form className="contact-form" onSubmit={onSubmit} onChange={onChange}>
+    <form className="contact-form" onSubmit={onSubmit} onChange={onChange} onBlur={onFieldBlur} noValidate>
       <input className="contact-form__botcheck" type="checkbox" name="botcheck" tabIndex="-1" autoComplete="off" />
 
       <ContactField
+        errors={fieldErrors.name}
         id="contact-name"
         icon={messageIcon}
         label="Full name"
-        minLength={3}
-        maxLength={100}
+        minLength={contactFieldConstraints.name.minLength}
+        maxLength={contactFieldConstraints.name.maxLength}
         name="name"
         placeholder="Yael Charles Marin"
       />
       <ContactField
+        errors={fieldErrors.contactEmail}
         id="contact-email"
         icon={mailIcon}
         label="Your E-mail"
-        minLength={3}
-        maxLength={100}
-        name="email"
+        minLength={contactFieldConstraints.contactEmail.minLength}
+        maxLength={contactFieldConstraints.contactEmail.maxLength}
+        name="contactEmail"
         placeholder="john_doe@gmail.com"
         type="email"
       />
       <ContactField
+        errors={fieldErrors.message}
         id="contact-message"
         icon={messageIcon}
         label="Type the Message"
-        minLength={10}
-        maxLength={500}
+        minLength={contactFieldConstraints.message.minLength}
+        maxLength={contactFieldConstraints.message.maxLength}
         name="message"
-        placeholder="Hello, I would like to collaborate with you :)"
+        placeholder="Hello, I would like to collaborate with you!"
         isTextArea
       />
 
@@ -52,7 +58,7 @@ const ContactForm = ({
         role="status"
         aria-live="polite"
       >
-        {submission.message}
+        {submission.status === 'success' ? '' : submission.message}
       </p>
     </form>
   )
