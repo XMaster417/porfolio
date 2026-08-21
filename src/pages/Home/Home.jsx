@@ -1,4 +1,5 @@
 import AboutMeSection from '../../components/organisms/AboutMeSection'
+import ContactSection from '../../components/organisms/ContactSection'
 import ExperienceSection from '../../components/organisms/ExperienceSection'
 import HeroSection from '../../components/organisms/HeroSection'
 import Navbar from '../../components/organisms/Navbar'
@@ -14,6 +15,7 @@ const Home = () => {
       <ExperienceSection />
       <ProjectsSection />
       <SkillsSection />
+      <ContactSection />
     </>
   )
 }

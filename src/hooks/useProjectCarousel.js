@@ -1,6 +1,11 @@
 import { useRef, useState } from 'react'
 import projects from '../data/projects'
 
+const isInteractiveElement = (target) => (
+  target instanceof Element
+  && Boolean(target.closest('a, button, input, textarea, select'))
+)
+
 const useProjectCarousel = () => {
   const [activeProjectIndex, setActiveProjectIndex] = useState(0)
   const swipeStart = useRef(null)
@@ -36,7 +41,12 @@ const useProjectCarousel = () => {
   }
 
   const startProjectSwipe = (event) => {
-    if (event.pointerType === 'touch' || !event.isPrimary || event.button !== 0) return
+    if (
+      event.pointerType === 'touch'
+      || !event.isPrimary
+      || event.button !== 0
+      || isInteractiveElement(event.target)
+    ) return
 
     didSwipe.current = false
     swipeStart.current = {
@@ -65,6 +75,8 @@ const useProjectCarousel = () => {
   }
 
   const startProjectTouchSwipe = (event) => {
+    if (isInteractiveElement(event.target)) return
+
     const touch = event.touches[0]
 
     if (!touch) return
